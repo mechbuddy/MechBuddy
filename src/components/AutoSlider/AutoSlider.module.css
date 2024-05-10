@@ -1,0 +1,26 @@
+.slider {
+    width: 80vw;
+    overflow: hidden;
+  }
+  
+  .slide-track {
+    display: flex;
+    width: 160vw;
+    animation: scroll 6s linear infinite;
+  }
+
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%); /* Change to negative value */
+    }
+  }
+
+  @media  screen and (max-width:1024px) {
+    .slider{
+      width: 90vw;
+    }
+  }

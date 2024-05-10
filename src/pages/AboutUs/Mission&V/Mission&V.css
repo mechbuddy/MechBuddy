@@ -1,0 +1,85 @@
+.Que-Answer {
+    margin-top: 40px;
+    margin-left:3vw;
+
+    margin-right: 20px;
+}
+
+.Que {
+
+    width: 586px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #F31D32;
+    box-shadow: 0px 8px 4px 0px #00000040;
+    position: relative;
+    z-index: 1;
+    border-radius: 0px 12px 12px 0px;
+    
+}
+
+.Que p {
+    font-weight: 600;
+    font-size: 22px;
+    color: azure;
+    text-align: center;
+    font-family: 'Sofia Pro', sans-serif;
+}
+
+.triangles {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 46px 30px 0;
+    border-color: transparent #f31d32 transparent transparent;
+}
+
+.groups {
+    display: flex;
+    height: fit-content;
+}
+
+.Answer {
+    width: 519px;
+    height: 459px;
+    top: 1427px;
+    left: 100px;
+    gap: 0px;
+    border-radius: 0px 0px 23px 23px;
+    opacity: 0px;
+    font-size: 19px;
+    box-shadow: 0px 0px 12.3px 0px #00000040;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Answer .innerbox {
+    width: 460px;
+    height: 368px;
+    top: 1484px;    
+    left: 129px; 
+  }
+
+  .border-gradient-l-red-600-red-40 {
+    border-width: 1.7px;
+    border-image: linear-gradient(to bottom right, white 10%, red , white 90%) 1;
+  }
+
+.Answer p {
+    width: auto;
+    margin-top: 82px;
+    margin-left: 10px;
+    height: 200px;
+    top: 1553px;
+    left: 167px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #4E4E4E;
+    line-height: 20px;
+    text-align: left;
+    font-family: 'Sofia Pro', sans-serif;
+}

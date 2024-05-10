@@ -1,0 +1,161 @@
+.navbar {
+  background: white;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-radius: 40px;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.22);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2% 0 0.1% 3%;
+  width: 96vw;
+}
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
+  margin-right: 3%;
+}
+.nocontent {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
+  margin-right: 3%;
+}
+
+.heading {
+  flex: 0.55;
+}
+
+.heading p {
+  transform: translateY(-15%);
+  margin-left: 2%;
+  font-size: 15px;
+  color: #252525cc;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: lighter;
+}
+
+.content p {
+  margin: 1%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: lighter;
+  transition: 400ms ease-in-out;
+}
+
+
+
+
+.nocontent p {
+  margin: 1%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: lighter;
+  transition: 400ms ease-in-out;
+}
+
+.content>button {
+  border: 2px solid #f31d32;
+  padding: 7px;
+  width: 10vw;
+  border-radius: 5px;
+  background: #f31d32;
+  color: aliceblue;
+  font-weight: bolder;
+  transition: 400ms ease-in-out;
+}
+.nocontent>button {
+  border: 2px solid #f31d32;
+  padding: 7px;
+  width: 10vw;
+  border-radius: 5px;
+  background: #f31d32;
+  color: aliceblue;
+  font-weight: bolder;
+  transition: 400ms ease-in-out;
+}
+
+.navbar h1 {
+  margin: 0px;
+  padding: 0px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #f31d32;
+  word-spacing: 1px;
+}
+
+#btn2 {
+  color: #f31d32;
+  background: white;
+}
+
+
+.content button:hover {
+  background: white;
+  color: #f31d32;
+}
+.nocontent button:hover {
+  background: white;
+  color: #f31d32;
+}
+
+#btn2:hover {
+  background: #f31d32;
+  color: aliceblue;
+} 
+
+
+
+@media (max-width: 800px) {
+  .navbar .menu{
+    display: flex;
+    flex-direction: column;
+    margin-right: 3vw;
+    position: absolute;
+    top: 5.5%;
+    right: 0.5rem;
+  }
+  .navbar .menu span{
+    border: 1px solid black;
+    width:4vw;
+    margin: 0.5vw;
+  }
+  .navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 2vw;
+  }
+  .navbar .heading p{
+    width: 200px;
+  }
+  .nocontent{
+    display: none;
+  }
+  .navbar .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  
+  
+  .navbar .content button{
+    margin-top: 2.2vw;
+    width: 300px;
+  }
+  #btn2{
+    margin-bottom: 3vw;
+  }
+
+}
+
+@media (max-width: 500px){
+    .navbar .menu{
+
+    top: 40px;
+  }
+}

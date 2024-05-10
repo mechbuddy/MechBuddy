@@ -1,0 +1,115 @@
+.circleLogIn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background-color: #F31D32;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+}
+
+.circle-animation {
+    animation: animation 3s ease-in-out forwards;
+}
+
+.circle-ranimation {
+    animation: ranimation 3s ease-in-out forwards;
+}
+
+.slide-in-animation {
+    animation: slide-in 2s ease-in-out forwards;
+}
+
+.slide-out-animation {
+
+    animation: slide-out 1s ease-in-out forwards;
+}
+
+.slide-in-r-animation {
+    animation: slide-in-r 2s ease-in-out forwards;
+}
+
+.slide-out-r-animation {
+    animation: slide-out-r 1s ease-in-out forwards;
+}
+
+@keyframes animation {
+    50% {
+        transform: scale(5);
+    }
+
+    100% {
+        border-bottom-right-radius: 40%;
+        transform: translateY(-150%) translateX(-200%) scale(1);
+    }
+
+}
+
+@keyframes ranimation {
+    0% {
+        border-bottom-right-radius: 40%;
+        transform: translateY(-150%) translateX(-200%) scale(1);
+    }
+
+    50% {
+        transform: scale(5);
+    }
+
+    100% {
+        transform: translateY(0%) translateX(0%) scale(1);
+    }
+
+}
+
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+
+    }
+
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+
+}
+
+@keyframes slide-in-r {
+    0% {
+        transform: translateX(200%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+
+}
+
+@keyframes slide-out-r {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(200%);
+    }
+
+}
+
+@media  screen and (max-width:750px) {
+    .circleLogIn {
+        display: none;
+    }
+}
