@@ -18,35 +18,33 @@ const Faq = () => {
                 <img src={faq} className="hidden md:block" />
                 <div className="subcontent my-[2%]" >
                     <div>
+             
+
                         <div className="Ques-Ans">
-                            <div className="Ques"><p>What service do you offer</p></div>
+                            <div className="Ques"><p>Does MechBuddy offer services for both four-wheelers and heavy-duty vehicles, or is it exclusively for two-wheelers?</p></div>
                             <div className="group">
                                 <div className="triangle"></div>
                                 <div className="Ans">
-                                    <p>Users often want to know what types of automotive repair and
-                                        maintenance services the mechanic provides.</p>
+                                    <p>Yes, MechBuddy offers services for two-wheelers, four-wheelers, and heavy-duty vehicles. We cater to a wide range of vehicle types to meet your maintenance and repair needs.</p>
                                 </div>
                             </div>
                         </div>
 
                         <div className="Ques-Ans">
-                            <div className="Ques"><p>What service do you offer</p></div>
+                            <div className="Ques"><p>Does MechBuddy provide pick-up and drop-off services, as well as towing?</p></div>
                             <div className="group">
                                 <div className="triangle"></div>
                                 <div className="Ans">
-                                    <p>Users often want to know what types of automotive repair and
-                                        maintenance services the mechanic provides.</p>
+                                    <p>Yes, MechBuddy offers pick-up and drop-off services as well as towing. The availability and cost of these services may vary based on distance. Additionally, pick-up and drop-off services may sometimes be free with applicable coupons or offers.</p>
                                 </div>
                             </div>
                         </div>
-
                         <div className="Ques-Ans">
-                            <div className="Ques"><p>What service do you offer</p></div>
+                            <div className="Ques"><p>In which cities does MechBuddy provide their services?</p></div>
                             <div className="group">
                                 <div className="triangle"></div>
                                 <div className="Ans">
-                                    <p>Users often want to know what types of automotive repair and
-                                        maintenance services the mechanic provides.</p>
+                                    <p> MechBuddy offers their services in Indore, Ujjain, Jabalpur, and Dewas..</p>
                                 </div>
                             </div>
                         </div>

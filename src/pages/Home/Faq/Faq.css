@@ -44,9 +44,9 @@
 }
 
 .Ques p {
-    margin-left: 12%;
+    margin-left: 5%;
     font-weight: 600;
-    font-size: 22px;
+    font-size:clamp(1rem , 2vw, 1.25rem);
     color: azure;
 }
 
@@ -65,7 +65,8 @@
 
 .Ans {
     width: 50vw;
-    height: 95.62px;
+    padding-bottom: 2%;
+    height:auto;
     top: 3992.38px;
     left: 603.99px;
     gap: 0px;
