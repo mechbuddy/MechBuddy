@@ -19,7 +19,7 @@ function Header() {
     };
 
     return (<>
-        <div className="flex py-1 sm:mr-36 sm:gap-4 gap-3 mr-2 mt-3 mb-2 flex-row-reverse">
+        <div className="flex justify-center py-1 sm:justify-start sm:mr-[3%] sm:gap-4 gap-3 mr-2 mt-3 mb-2 flex-row-reverse">
             {/* whatsapp part , function is written on top*/}
             <div className="font-sans text-gray-700 font-semibold text-[0.8rem] border flex gap-1 border-stone-300 rounded-lg p-1 cursor-pointer w-auto" onClick={openWhatsApp}>
                 <img src={whatsapp} className=" h-5 w-5" /> +91 8435776053

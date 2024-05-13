@@ -67,8 +67,7 @@
     width: 50vw;
 
     height:auto;
-    top: 3992.38px;
-    left: 603.99px;
+
     gap: 0px;
     border-radius: 0px 0px 23px 23px;
     opacity: 0px;
@@ -111,6 +110,10 @@
     }
     .FaqBtn{
         width: 30vw;
+    }
+    
+    .triangle{
+        border-width: 0 36px 20px 0;
     }
  
     .Ans p{
