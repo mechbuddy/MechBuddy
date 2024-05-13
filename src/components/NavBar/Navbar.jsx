@@ -17,7 +17,7 @@ const Navbar = ({ onClick }) => {
         <h1>
           Mech <span className="text-black">Buddy</span>
         </h1>
-        <p className="hidden sm:block">Merchants & Mechanics</p>
+        <p className="hidden sm:block">Aapka Apna Mechanic</p>
       </div>
 
       <div className="menu" onClick={() => setShow(!show)}>
