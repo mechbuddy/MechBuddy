@@ -177,7 +177,6 @@ const Footer = () => {
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
-                    onClick={() => { window.location.href = "https://www.facebook.com/profile.php?id=100083965177966&mibextid=ZbWKwL" }}
                   >
                     <path
                       fillRule="evenodd"
