@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import axios from 'axios';
+import Cookies from 'js-cookie';
 import LoginImg from "../../assets/Login/LoginImg.png";
 import SignUpImg from "../../assets/Login/SignUp.png";
-
+import { AuthContext } from "../../App";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 
-function Login({ onClick }) {
+function Login({ onClick, showAnimation, showRAnimation, setRShowAnimation, setShowAnimation }) {
 
-    let [showAnimation, setShowAnimation] = useState(false);
-    let [showRAnimation, setRShowAnimation] = useState(true);
+    let { setIsLoggedIn } = useContext(AuthContext);
+    let navigate = useNavigate();
 
     function handleClick() {
         setShowAnimation(true);
@@ -19,11 +22,52 @@ function Login({ onClick }) {
         setRShowAnimation(true);
     }
 
+    async function handleSubmitLogin(e) {
+        e.preventDefault();
+        const formData = {
+            "email": e.target.email.value,
+            "password": e.target.password.value
+        };
+
+        await axios.post("https://api-phi-hazel.vercel.app/login", formData)
+            .then(response => {
+                Cookies.set('token', response.data.token, { expires: 1 });
+                setIsLoggedIn(true);
+                navigate('/');
+                window.location.reload();
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+    async function handleSubmitSignUp(e) {
+        e.preventDefault();
+        const formData = {
+            "email": e.target.email.value,
+            "password": e.target.password.value
+        };
+
+        await axios.post("https://api-phi-hazel.vercel.app/signup", formData)
+            .then(response => {
+                Cookies.set('token', response.data.token, { expires: 1 });
+                setIsLoggedIn(true);
+                navigate('/');
+                window.location.reload();
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+
+
     return (<div className="flex justify-center items-center h-[100vh]">
 
-        <div className="absolute h-[100vh] w-[100vw] bg-black opacity-70"/>
+        <div className="absolute h-[100vh] w-[100vw] bg-black opacity-70" />
         <div className="relative border h-[60%] border-slate-200 w-[80%] overflow-hidden flex items-center rounded-xl bg-bgImg  sm:h-[80%]  md:w-[60%]" >
-            <div onClick={onClick} className={`absolute top-5  right-5 z-10 cursor-pointer ${showRAnimation ? 'md:text-white ' : 'text-black'} md:right-16`}>	&#10006;</div>
+            <div onClick={onClick} className={`absolute top-5  right-5 z-20 cursor-pointer ${showRAnimation ? 'md:text-white ' : 'text-black'} md:right-16`}>	&#10006;</div>
 
             {/*Login*/}
             <div className={`flex flex-col w-[100%] z-10  px-[10%] mt-[5%] absolute ${showRAnimation ? 'slide-in-animation ' : 'slide-out-animation'} md:w-[50%] md:z-0`}>
@@ -31,7 +75,7 @@ function Login({ onClick }) {
                     <div className="text-3xl"><span className=" text-red-500">Mech </span>Buddy</div>
                     <div className="font-sans text-xs font-semibold text-slate-700 ml-3">Merchants & Mechanics</div>
                 </div>
-                <form className="flex flex-col w-full">
+                <form className="flex flex-col w-full" onSubmit={handleSubmitLogin}>
                     <div className="text-xl">Login</div>
                     <input type="text" name="email" id="email" className=" bg-gray-100 border border-slate-300 my-1 px-1 py-2  rounded-lg placeholder:font-sans placeholder:text-xs" placeholder="Email" />
                     <input type="text" name="password" id="password" className=" bg-gray-100 border border-slate-300 my-1 px-1 py-2  rounded-lg placeholder:font-sans placeholder:text-xs" placeholder="Password" />
@@ -57,7 +101,7 @@ function Login({ onClick }) {
                     <div className="text-3xl"><span className=" text-red-500">Mech </span>Buddy</div>
                     <div className="font-sans text-xs font-semibold text-slate-700 ml-3">Merchants & Mechanics</div>
                 </div>
-                <form className="flex flex-col w-full">
+                <form className="flex flex-col w-full" onSubmit={handleSubmitSignUp}>
                     <div className="text-xl">Sign Up</div>
                     <input type="text" name="email" id="email" className=" bg-gray-100 border border-slate-300 my-1 px-1 py-2  rounded-lg placeholder:font-sans placeholder:text-xs" placeholder="Email" />
                     <input type="text" name="password" id="password" className=" bg-gray-100 border border-slate-300 my-1 px-1 py-2  rounded-lg placeholder:font-sans placeholder:text-xs" placeholder="Password" />

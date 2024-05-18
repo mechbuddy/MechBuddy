@@ -1,12 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import Login from "../../components/Login/Login";
 import UpperLine from "../../assets/UpperLine.png";
 import Navbar from "../../components/NavBar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
+
+
 export default function TermsCondition() {
+
+     let [modal, setModal] = useState(false);
+
+     let [showAnimation, setShowAnimation] = useState(false);
+     let [showRAnimation, setRShowAnimation] = useState(true);
+
+     function onClick() {
+          setModal(!modal);
+     }
+
+     function onClickSignUp() {
+          onClick();
+          setShowAnimation(true);
+          setRShowAnimation(false);
+     }
+
+     function onClickLogin() {
+          onClick();
+          setShowAnimation(false);
+          setRShowAnimation(true);
+     }
+
      return (
           <div>
-               <Navbar />
+               <Navbar onClickLogin={onClickLogin} onClickSignUp={onClickSignUp} />
                <div className="flex justify-evenly text-md text-Primary-gray  my-[8%] sm:my-[3%]">
                     <div>
                          <Link to="/TermsCondition">Terms & Conditions</Link>
@@ -884,6 +909,9 @@ export default function TermsCondition() {
                </div>
                <div className="mt-20">
                     <Footer />
+               </div>
+               <div className={`${modal ? 'fixed' : 'hidden'} top-0 h-[100vh] w-[100vw] z-20`}>
+                    <Login onClick={onClick} showAnimation={showAnimation} showRAnimation={showRAnimation} setRShowAnimation={setRShowAnimation} setShowAnimation={setShowAnimation} />
                </div>
           </div>
      );

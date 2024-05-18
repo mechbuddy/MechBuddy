@@ -57,7 +57,7 @@
   transition: 400ms ease-in-out;
 }
 
-.content>button {
+.content button {
   border: 2px solid #f31d32;
   padding: 7px;
   width: 10vw;
@@ -67,7 +67,7 @@
   font-weight: bolder;
   transition: 400ms ease-in-out;
 }
-.nocontent>button {
+.nocontent button {
   border: 2px solid #f31d32;
   padding: 7px;
   width: 10vw;

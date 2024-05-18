@@ -1,12 +1,36 @@
-import React from 'react'
+import React , {useState} from 'react'
 import UpperLine from "../../assets/UpperLine.png";
 import Navbar from '../../components/NavBar/Navbar';
+import Login from '../../components/Login/Login';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 const RefundPolicy = () => {
+
+    
+    let [modal, setModal] = useState(false);
+
+    let [showAnimation, setShowAnimation] = useState(false);
+    let [showRAnimation, setRShowAnimation] = useState(true);
+
+    function onClick() {
+        setModal(!modal);
+    }
+
+    function onClickSignUp(){
+        onClick();
+        setShowAnimation(true);
+        setRShowAnimation(false);
+    }
+
+    function onClickLogin(){
+        onClick();
+        setShowAnimation(false);
+        setRShowAnimation(true);
+    }
+
     return (
         <div className='bg-bgImg'>
-            <Navbar />
+               <Navbar onClickLogin={onClickLogin} onClickSignUp={onClickSignUp}/>
             <div className="flex justify-evenly text-md text-Primary-gray  my-[8%] sm:my-[3%]">
                 <div>
                     <Link to="/TermsCondition">Terms & Conditions</Link>
@@ -22,9 +46,6 @@ const RefundPolicy = () => {
                     <img src={UpperLine} alt="UpperLine" className=' w-[100%] ' />
                 </div>
 
-                <div className="flex justify-end items-center">
-                    <div className="w-[60vw] h-[1.7px]  bg-gradient-to-l from-red-600 to-red-40 mt-10 mb-10"></div>
-                </div>
             </div>
 
             <div className="ml-[5vw] w-[88vw]">
@@ -273,6 +294,9 @@ const RefundPolicy = () => {
 
             </div>
             <Footer />
+            <div className={`${modal ? 'fixed' : 'hidden'} top-0 h-[100vh] w-[100vw] z-20`}>
+                <Login onClick={onClick} showAnimation={showAnimation} showRAnimation={showRAnimation} setRShowAnimation={setRShowAnimation} setShowAnimation={setShowAnimation}/>
+            </div>
         </div>
     )
 }

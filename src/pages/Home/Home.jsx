@@ -13,14 +13,29 @@ function Home() {
 
     let [modal, setModal] = useState(false);
 
+    let [showAnimation, setShowAnimation] = useState(false);
+    let [showRAnimation, setRShowAnimation] = useState(true);
+
     function onClick() {
         setModal(!modal);
     }
 
+    function onClickSignUp() {
+        onClick();
+        setShowAnimation(true);
+        setRShowAnimation(false);
+    }
+
+    function onClickLogin() {
+        onClick();
+        setShowAnimation(false);
+        setRShowAnimation(true);
+    }
+
+
     return (
         <div className="bg-bgImg">
-
-            <Navbar onClick={onClick} />
+            <Navbar onClickLogin={onClickLogin} onClickSignUp={onClickSignUp} />
             <Header />
             <Service />
             <Review />
@@ -29,7 +44,7 @@ function Home() {
             <Map />
             <Footer />
             <div className={`${modal ? 'fixed' : 'hidden'} top-0 h-[100vh] w-[100vw] z-20`}>
-                <Login onClick={onClick} />
+                <Login onClick={onClick} showAnimation={showAnimation} showRAnimation={showRAnimation} setRShowAnimation={setRShowAnimation} setShowAnimation={setShowAnimation} />
             </div>
         </div>
     )

@@ -1,15 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import Cookies from 'js-cookie';
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../App";
 import "./Navbar.css";
 
-const Navbar = ({ onClick }) => {
+const Navbar = ({ onClickLogin, onClickSignUp }) => {
+
+  let navigate = useNavigate();
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const [show, setShow] = useState(false);
   const location = useLocation();
   const { pathname } = location;
 
+
+
   useEffect(() => {
     setShow(false); // Close the menu when route changes
   }, [pathname]);
+
+  function onClickLoginOut() {
+    Cookies.remove("token");
+    setIsLoggedIn(false);
+    navigate("/");
+  }
 
   return (
     <div className="navbar ">
@@ -47,9 +60,14 @@ const Navbar = ({ onClick }) => {
         >
           Contact Us
         </Link>
-
-        <button onClick={onClick}>Log In</button>
-        <button onClick={onClick} id="btn2">Sign Up</button>
+        {isLoggedIn ? (
+          <button id="btn2" onClick={() => { onClickLoginOut(); }}>Log Out</button>
+        ) : (
+          <>
+            <button onClick={() => { onClickLogin(); }}>Log In</button>
+            <button onClick={() => { onClickSignUp(); }} id="btn2">Sign Up</button>
+          </>
+        )}
       </div>
     </div>
   );
