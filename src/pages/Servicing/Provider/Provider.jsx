@@ -11,7 +11,7 @@ function Provider() {
     useEffect(() => {
 
         async function getData() {
-            await axios.get(`http://localhost:3001/service/`).then(response => {
+            await axios.get(`https://api-phi-hazel.vercel.app/service/`).then(response => {
                 setServiceData(response.data);
 
             })
