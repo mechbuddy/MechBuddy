@@ -39,7 +39,7 @@ function App() {
           <Route path='/PrivacyPolicies' element={<PrivacyPolicy />} />
           <Route path='/RefundPolicy' element={<RefundPolicy />} />
           <Route path='/Login' element={<Login showAnimation={showAnimation} showRAnimation={showRAnimation} setRShowAnimation={setRShowAnimation} setShowAnimation={setShowAnimation} />} />
-          <Route path='/Service' element={<Servicing />} />
+          <Route path='/Service/:id' element={<Servicing />} />
           <Route path='/Detail' element={<Detailing />} />
         </Routes>
       </Router>

@@ -7,7 +7,7 @@ import carImg from "../../../assets/car.png";
 import SearchBar from "../../../components/SearchBar/SearchBar";
 
 
-function Header() {
+function Header({ data }) {
     return (<div>
 
         <div className='relative mt-[10%] sm:mt-[5%]'>
@@ -28,31 +28,28 @@ function Header() {
                 </div>
             </div>
         </div>
-        <div className="relative flex justify-center my-[2%]">
-            <img src={carImg} alt="car" className="mx-[2%] h-[20%] w-[20%] hidden md:block"/>
-            <div className="flex justify-evenly items-center w-[90%]  border border-gray-200 border-r-[12px] border-r-Primary-red  bg-white rounded-3xl md:w-[60%]">
-                <div className="w-[100%] p-[5%] sm:w-[50%] sm:p-[1%]">
-                    <div className="text-[#464646] text-xl my-1">Honda City XS Gearbox</div>
+        <div className="relative flex justify-center items-center my-[2%]">
+            <img src={carImg} alt="car" className="mx-[2%] h-[20%] w-[20%] hidden md:block" />
+            <div className="flex  py-[2%] px-[2%] items-center w-[90%]  border border-gray-200 border-r-[12px] border-r-Primary-red  bg-white rounded-3xl md:w-[60%]">
+                <div className="w-[100%] p-[5%] sm:w-[70%] sm:p-[1%]">
+                    <div className="text-[#464646] text-xl my-1">{data.name}</div>
                     <div className="font-sans text-[#00000080] text-sm">
-                        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ...
+                        {data.address}
                     </div>
                     <div className="my-3">
-                        <div className="flex items-center font-sans text-[#5E5E5E] text-sm my-1"><img src={TickIcon} alt="tick" className="mx-1"/>Lorem ipsum Lorem ipsum</div>
-                        <div className="flex items-center font-sans text-[#5E5E5E] text-sm my-1"><img src={TickIcon} alt="tick" className="mx-1"/>Lorem ipsum Lorem ipsum</div>
-                        <div className="flex items-center font-sans text-[#5E5E5E] text-sm my-1"><img src={TickIcon} alt="tick" className="mx-1"/>Lorem ipsum Lorem ipsum</div>
+                        <div className="flex items-center font-sans text-[#5E5E5E] text-sm my-1"><img src={TickIcon} alt="tick" className="mx-1" />
+                        Customers mentioned good service and reasonable charges
+                        </div>
+                        <div className="flex items-center font-sans text-[#5E5E5E] text-sm my-1"><img src={TickIcon} alt="tick" className="mx-1" />
+                        Staff was friendly and helpful
+                        </div>
+                        <div className="flex items-center font-sans text-[#5E5E5E] text-sm my-1"><img src={TickIcon} alt="tick" className="mx-1" />
+                        The work done, such as ceramic coating and cleaning, was highly appreciated
+                        </div>
                     </div>
                     <button className="font-sans font-semibold w-[100%] bg-Primary-red text-white py-[2%] rounded-lg">GO FOR SERVICING</button>
                 </div>
-                <div className="hidden h-[70%] w-[2px] bg-[#4E4E4E] rounded-md sm:block"></div>
-                <div className="hidden sm:block">
-                    <div className="text-[#4E4E4E]">Engine : <span className="font-sans text-[#5E5E5E]">1197 cc - 1498 cc</span></div>
-                    <div className="text-[#4E4E4E]">Power : <span className="font-sans text-[#5E5E5E]">109.96 - 128.73 bhp</span></div>
-                    <div className="text-[#4E4E4E]">Torque : <span className="font-sans text-[#5E5E5E]">230 Nm - 200 Nm</span></div>
-                    <div className="text-[#4E4E4E]">Drive Type : <span className="font-sans text-[#5E5E5E]">FWD</span></div>
-                    <div className="text-[#4E4E4E]">Fuel : <span className="font-sans text-[#5E5E5E]">Diesel / Petrol</span></div>
-                    <div className="text-[#4E4E4E]">Seating Capacity : <span className="font-sans text-[#5E5E5E]">5</span></div>
-                </div>
-              
+
             </div>
         </div>
     </div>

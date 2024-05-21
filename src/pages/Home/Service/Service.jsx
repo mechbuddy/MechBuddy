@@ -11,7 +11,7 @@ function Service() {
     let navigate = useNavigate();
 
     function handleService(){
-        navigate("/Service");
+        navigate("/Service/1");
     }
     function handleDetail(){
         navigate("/Detail");
