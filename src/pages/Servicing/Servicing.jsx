@@ -20,7 +20,7 @@ function Servicing() {
     useEffect(() => {
 
         async function getData() {
-            await axios.get(`https://api-phi-hazel.vercel.app/${id}`).then(response => {
+            await axios.get(`https://api-phi-hazel.vercel.app/service/${id}`).then(response => {
                 setServiceData(response.data[0]);
             })
                 .catch(error => {
