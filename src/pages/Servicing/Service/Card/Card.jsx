@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card({ title, price }) {
+function Card({ title, price, handleClick }) {
     return (<div className="mx-auto my-[2%] lg:mx-[1%]">
         <div className="relative">
             <div className="text-2xl font-sans font-semibold bg-Primary-red text-white py-2 w-[80vw] text-center rounded-se-lg rounded-ee-lg sm:w-[65vw]  md:w-[30vw] lg:w-[23vw]">{title}</div>
@@ -9,7 +9,6 @@ function Card({ title, price }) {
         </div>
         <div className=" relative  flex flex-col items-center left-[30px] bg-white w-[70vw] border border-gray-300 py-[8%] rounded-ee-lg rounded-es-lg drop-shadow-2xl sm:w-[60vw]  md:w-[25vw]  lg:w-[20vw]">
             <div className="text-center " >
-                <div>Starting From</div>
                 <div className="text-[2rem] font-sans font-bold text-Primary-red">Rs {price} /-</div>
                 <div className="text-[0.7rem] text-[#4D4D4D]">Per Month - 03 Services</div>
             </div>
@@ -51,7 +50,7 @@ function Card({ title, price }) {
                         : ""
                 }
             </ul>
-            <button className="w-[90%] font-SofiaSans text-sm bg-Primary-red py-3 text-white rounded-lg">BUY NOW</button>
+            <button onClick={handleClick} className="w-[90%] font-SofiaSans text-sm bg-Primary-red py-3 text-white rounded-lg">BUY NOW</button>
         </div>
     </div>)
 }

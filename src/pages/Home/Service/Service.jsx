@@ -10,10 +10,10 @@ function Service() {
 
     let navigate = useNavigate();
 
-    function handleService(){
+    function handleService() {
         navigate("/Service/1");
     }
-    function handleDetail(){
+    function handleDetail() {
         navigate("/Detail");
     }
 
@@ -48,8 +48,8 @@ function Service() {
                                         time.
                                     </div>
                                     <button
-                                    onClick={handleService}
-                                     className="z-10 justify-center px-9 py-3 mt-5  text-white bg-Primary-red rounded-md max-md:px-5 max-md:mb-2.5 mb-[-20px]">
+                                        onClick={handleService}
+                                        className="z-10 justify-center px-9 py-3 mt-5  text-white bg-Primary-red rounded-md max-md:px-5 max-md:mb-2.5 mb-[-20px]">
                                         GET NOW
                                     </button>
                                 </div>
@@ -72,9 +72,9 @@ function Service() {
                                         Schedule your service in advanced with us and get It done in
                                         time.
                                     </div>
-                                    <button 
-                                    className="z-10 justify-center px-9 py-3 mt-5  text-white bg-Primary-red rounded-md max-md:px-5 max-md:mb-2.5 mb-[-20px]"
-                                    onClick={handleDetail}>
+                                    <button
+                                        className="z-10 justify-center px-9 py-3 mt-5  text-white bg-Primary-red rounded-md max-md:px-5 max-md:mb-2.5 mb-[-20px]"
+                                        onClick={handleDetail}>
                                         GET NOW
                                     </button>
                                 </div>
@@ -119,7 +119,7 @@ function Service() {
                                         Schedule your service in advanced with us and get It done in
                                         time.
                                     </div>
-                                    <button className="z-10 justify-center px-9 py-3 mt-5 text-white bg-Primary-red rounded-md max-md:px-5 max-md:mb-2.5 mb-[-20px]">
+                                    <button onClick={() => { navigate("/sparePart") }} className="z-10 justify-center px-9 py-3 mt-5 text-white bg-Primary-red rounded-md max-md:px-5 max-md:mb-2.5 mb-[-20px]">
                                         GET NOW
                                     </button>
                                 </div>

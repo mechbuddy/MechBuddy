@@ -29,9 +29,11 @@ function Login({ onClick, showAnimation, showRAnimation, setRShowAnimation, setS
             "password": e.target.password.value
         };
 
-        await axios.post("https://api-phi-hazel.vercel.app/login", formData)
+        await axios.post("http://localhost:3001/login", formData)
             .then(response => {
                 Cookies.set('token', response.data.token, { expires: 1 });
+                Cookies.set('userId', response.data.userId, { expires: 1 });
+                console.log(response.data)
                 setIsLoggedIn(true);
                 navigate('/');
                 window.location.reload();

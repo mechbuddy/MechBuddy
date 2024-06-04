@@ -8,30 +8,34 @@ import Footer from "../../components/Footer/Footer";
 import Map from "./Map/Map"
 import Faq from "./Faq/Faq";
 import Login from "../../components/Login/Login";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
 
     let [modal, setModal] = useState(false);
+    let navigate = useNavigate();
 
     let [showAnimation, setShowAnimation] = useState(false);
     let [showRAnimation, setRShowAnimation] = useState(true);
 
     function onClick() {
         setModal(!modal);
+        navigate("/");
+        
     }
-
+    
     function onClickSignUp() {
         onClick();
         setShowAnimation(true);
         setRShowAnimation(false);
     }
-
+    
     function onClickLogin() {
         onClick();
         setShowAnimation(false);
         setRShowAnimation(true);
     }
-
+    
 
     return (
         <div className="bg-bgImg">
